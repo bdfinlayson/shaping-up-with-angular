@@ -50,6 +50,15 @@
 
     <div class="container">
     <div ng-view=""></div>
+      <div ng-controller='StoreController as store'>
+
+        <h3>
+          <em>{{store.product.name}}</em>
+          <em>{{store.product.price}}</em>
+        </h3>
+
+      </div>
+
     </div>
 
     <div class="footer">

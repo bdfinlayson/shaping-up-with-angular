@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('shapingUpWithAngularApp', [
     'ngAnimate',
     'ngCookies',
@@ -31,3 +31,13 @@ angular
         redirectTo: '/'
       });
   });
+var gem = {
+    name: 'gem 1',
+    price: 2.95
+  };
+
+  app.controller('StoreController', function () {
+    this.product = gem;
+  });
+
+
