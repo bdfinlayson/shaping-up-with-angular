@@ -31,13 +31,25 @@ var app = angular
         redirectTo: '/'
       });
   });
-var gem = {
+var gems = [
+  {
     name: 'gem 1',
-    price: 2.95
-  };
+    price: 2.95,
+    canPurchase: true,
+    description: 'This is a description of our special gem',
+    soldOut: false 
+  },
+  {
+    name: 'gem 2',
+    price: 2.95,
+    canPurchase: true,
+    description: 'This is a description of our special gem',
+    soldOut: false
+  }
+];
 
   app.controller('StoreController', function () {
-    this.product = gem;
+    this.products = gems;
   });
 
 

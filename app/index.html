@@ -52,11 +52,16 @@
     <div ng-view=""></div>
       <div ng-controller='StoreController as store'>
 
-        <h3>
-          <em>{{store.product.name}}</em>
-          <em>{{store.product.price}}</em>
-        </h3>
-
+        <div ng-repeat='product in store.products' ng-show='store.product.canPurchase' ng-hide='store.product.soldOut'>
+          <h3> 
+            {{product.name}}
+            <br>
+            <em>{{product.description}}</em>
+            <br>
+            <em>{{product.price}}</em>
+          </h3>
+          <button ng-hide='false'>Buy Now!</button>
+        </div>
       </div>
 
     </div>
