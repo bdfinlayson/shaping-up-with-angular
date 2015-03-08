@@ -73,16 +73,53 @@
               {{tab}}
               <div class='panel' ng-show='panel.isSelected(1)'>
                 <h4>Description</h4>
-                  <p>{{product.description | limitTo:250 }}</p>
+                  <blockquote>
+                    <b>{{product.description | limitTo:250 }}</b>
+                  </blockquote>
               </div>
               <div class='panel' ng-show='panel.isSelected(2)'>
                 <h4>Specifications</h4>
-                  <p>{{product.price | currency }}</p>
-                  <p>{{product.time | date:'MM/dd/yyyy @ h:mma'}}</p>
+                  <blockquote>
+                    <b>Price: {{product.price | currency }}</b>
+                  </blockquote>  
+                  <blockquote>
+                    <b>Available Since: {{product.time | date:'MM/dd/yyyy @ h:mma'}}</b>
+                  </blockquote>
               </div>
               <div class='panel' ng-show='panel.isSelected(3)'>
                 <h4>Reviews</h4>
-                  <p>None yet.</p>
+                  <blockquote ng-repeat='review in product.reviews'>
+                    <b>Stars: {{review.stars}}</b>
+                    {{review.body}}
+                    <cite>by: {{review.author}}</cite>
+                  </blockquote>
+                  <form name='reviewForm'>
+                    <blockquote>
+                      <b>Stars: {{review.stars}}</b>
+                      <br>
+                      {{review.body}}
+                      <br>
+                      <cite>by: {{review.author}}</cite>
+                      <br>
+                    </blockquote>
+                    <select ng-model='review.stars'>
+                      <option value='1'>1 star</option>
+                      <option value='2'>2 stars</option>
+                      <option value='3'>3 stars</option>
+                      <option value='4'>4 stars</option>
+                      <option value='5'>5 stars</option>
+                    </select>
+                      <br>
+                    <textarea ng-model='review.body'></textarea>
+                      <br>
+                    <label>by:</label>
+                      <br>
+                    <input ng-model='review.author' type='email' />
+                      <br>
+                    <input ng-model='review.terms' type='checkbox' /> I agree to the terms
+                      <br>
+                    <input type='submit' value='Submit' />
+                  </form>
                 </h4>
               </div>
             </section>

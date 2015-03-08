@@ -31,28 +31,53 @@ var app = angular
         redirectTo: '/'
       });
   });
-var gems = [
+  app.controller('StoreController', function () {
+    this.products = [
   {
     name: 'gem 1',
     price: 2.95,
     canPurchase: true,
-    description: 'This is a description of our special gem',
+    description: 'This is a description of our special product',
     soldOut: false,
     time: new Date(),
+    reviews: [
+      {
+        stars: 5,
+        body: 'I love this product',
+        author: 'bdfinlayson@gmail.com'
+      },
+      {
+        stars: 3,
+        body: 'It was so-so',
+        author: 'noneofyourbusiness@anonymous.com'
+      }
+    ],
     images: [
       { full: 'http://lorempixel.com/400/200',
         thumb: 'http://lorempixel.com/100/100'
-    }
+      }
     ]
   },
   {
     name: 'gem 2',
     price: 10.95,
     canPurchase: true,
-    description: 'This is a description of our special gem',
+    description: 'This is a description of our special product',
     soldOut: false,
     time: new Date(),
-    images: [
+    reviews: [
+        {
+          stars: 5,
+          body: 'I love this product',
+          author: 'bdfinlayson@gmail.com'
+        },
+        {
+          stars: 3,
+          body: 'It was so-so',
+          author: 'noneofyourbusiness@anonymous.com'
+        }
+      ],
+      images: [
       { full: 'http://lorempixel.com/400/200',
         thumb: 'http://lorempixel.com/100/100'
       }
@@ -60,8 +85,8 @@ var gems = [
   }
 ];
 
-  app.controller('StoreController', function () {
-    this.products = gems;
+
+
   });
 
   app.controller('PanelController', function() {
