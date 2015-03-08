@@ -106,3 +106,10 @@ var app = angular
       this.review = {};
     };
   });
+  
+  app.directive('productNav', function() {
+    return {
+      restrict: 'E',
+      templateUrl: '../snippits/product-nav.html'
+    };
+  });

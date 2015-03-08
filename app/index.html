@@ -59,7 +59,8 @@
             <img ng-src='{{product.images[0].full}}'>
             <br>
             <section  ng-controller='PanelController as panel'>
-              <ul class='nav nav-pills'>
+              <product-nav></product-nav> 
+            <!--  <ul class='nav nav-pills'>
                 <li ng-class='{ active:pane.isSelected(1) }'>
                   <a href ng-click='panel.selectTab(1)'>Description</a>
                 </li>
@@ -69,7 +70,7 @@
                 <li ng-class='{ active:panel.isSelected(3) }'>
                   <a href ng-click='panel.selectTab(3)'>Reviews</a>
                 </li>
-              </ul>
+              </ul> -->
               {{tab}}
               <div class='panel' ng-show='panel.isSelected(1)'>
                 <h4>Description</h4>
@@ -124,7 +125,7 @@
               </div>
             </section>
           </h3>
-          <button ng-hide='false'>Buy Now!</button>
+          <button hide='false'>Buy Now!</button>
         </div>
       </div>
 
