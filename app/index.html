@@ -52,13 +52,17 @@
     <div ng-view=""></div>
       <div ng-controller='StoreController as store'>
 
-        <div ng-repeat='product in store.products' ng-show='store.product.canPurchase' ng-hide='store.product.soldOut'>
-          <h3> 
-            {{product.name}}
+        <div ng-repeat='product in store.products | orderBy:"-price"' ng-show='store.product.canPurchase' ng-hide='store.product.soldOut'>
+          <h3>
+            {{product.name | uppercase }}
             <br>
-            <em>{{product.description}}</em>
+            <img ng-src='{{product.images[0].full}}'>
             <br>
-            <em>{{product.price}}</em>
+            <em>{{product.description | limitTo:250 }}</em>
+            <br>
+            <em>{{product.price | currency }}</em>
+            <br>
+            <em>{{product.time | date:'MM/dd/yyyy @ h:mma'}}</em>
           </h3>
           <button ng-hide='false'>Buy Now!</button>
         </div>

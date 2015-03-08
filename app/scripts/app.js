@@ -37,14 +37,26 @@ var gems = [
     price: 2.95,
     canPurchase: true,
     description: 'This is a description of our special gem',
-    soldOut: false 
+    soldOut: false,
+    time: new Date(),
+    images: [
+      { full: 'http://lorempixel.com/400/200',
+        thumb: 'http://lorempixel.com/100/100'
+    }
+    ]
   },
   {
     name: 'gem 2',
-    price: 2.95,
+    price: 10.95,
     canPurchase: true,
     description: 'This is a description of our special gem',
-    soldOut: false
+    soldOut: false,
+    time: new Date(),
+    images: [
+      { full: 'http://lorempixel.com/400/200',
+        thumb: 'http://lorempixel.com/100/100'
+      }
+    ]
   }
 ];
 
