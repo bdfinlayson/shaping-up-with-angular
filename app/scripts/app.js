@@ -98,3 +98,11 @@ var app = angular
       return this.tab === checkTab;
     };
   });
+
+  app.controller('ReviewForm', function() {
+    this.review = {};
+    this.addReview = function(product) {
+      product.reviews.push(this.review);
+      this.review = {};
+    };
+  });
